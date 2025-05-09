@@ -1,0 +1,21 @@
+[sqlfluff]
+dialect = tsql
+templater = jinja
+exclude_rules = L009,L031
+
+[sqlfluff:indentation]
+indented_using_on = True
+indented_on_contents = False
+indented_on_clauses = True
+
+[sqlfluff:layout:type:join_on]
+keyword_line_position = alone
+
+[sqlfluff:rule:capitalisation.literals]
+capitalisation_policy = consistent
+
+[sqlfluff.rules.layout.keyword_newline]
+forbid_same_line = ["ON", "WHERE", "GROUP BY", "HAVING", "ORDER BY"]  # Keywords to enforce on a new line
+
+[sqlfluff:templater:jinja]
+apply_dbt_builtins = True
